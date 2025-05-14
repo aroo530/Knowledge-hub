@@ -1,0 +1,7 @@
+<div class="knowledge-list">
+    <div *ngFor="let knowledge of knowledgeList" class="knowledge-card" (click)="navigateToDetail(knowledge)">
+      <h3>{{ knowledge.title }}</h3>
+      <p>{{ knowledge.content | slice:0:100 }}...</p>
+    </div>
+  </div>
+  

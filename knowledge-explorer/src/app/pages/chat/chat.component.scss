@@ -1,0 +1,130 @@
+/* Chat Container */
+.chat-container {
+  width: 100%;
+  height: 90vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mat-sys-background);
+  border: 0;
+
+  //   border-radius: 10px;
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Items spread out */
+  align-items: center; /* Align items in the middle */
+}
+/* Chat Window (Scrollable) */
+.chat-window {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  //   background-color: #343541;
+  //   border-bottom: 1px solid #444;
+  /* Message Bubble */
+  .item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Items spread out */
+    align-items: center; /* Align items in the middle */
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .message {
+    max-width: 80%;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.4;
+    // word-wrap: normal;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #0d0d0d;
+    word-wrap: break-word; /* Ensures text wraps */
+    overflow-wrap: break-word; /* Breaks long words */
+    word-break: break-word; /* Additional support for older browsers */
+    white-space: pre-wrap; /* Maintains line breaks */
+  }
+
+  /* Ensure Markdown content adheres to message container */
+  .message div[markdown] {
+    max-width: 100%; /* Limits Markdown content within message */
+    overflow-x: auto; /* Prevents horizontal scrolling */
+  }
+  /* User Messages (Align Right, Green Bubble) */
+  .user-message {
+    width: 50%;
+    border-radius: 16px;
+    background-color: #f4f4f4;
+    align-self: flex-end; /* This aligns at the bottom */
+    border-bottom-right-radius: 0;
+  }
+
+  /* Bot Messages (Align Left, Gray Bubble) */
+  .bot-message {
+    //   background-color: #444654;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* Timestamp */
+.timestamp {
+  font-size: 0.8em;
+  color: #999;
+  display: block;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffff;
+  border: 1px black;
+  border-radius: 16px;
+}
+
+/* Input Field */
+.input-field {
+  flex: 1;
+  background: transparent;
+  color: white;
+  width: 90%;
+  height: 100%;
+}
+
+.input-field input {
+  color: #0d0d0d;
+  width: 90%;
+  height: 100%;
+  border: 0;
+}
+
+.input-field ::placeholder {
+  color: #0d0d0d;
+  opacity: 0.8;
+}
+
+/* Send Button */
+button {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  min-width: unset;
+  margin-left: 10px;
+}
+
+button mat-icon {
+  font-size: 24px;
+}

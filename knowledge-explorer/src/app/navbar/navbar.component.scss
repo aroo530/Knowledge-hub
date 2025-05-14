@@ -1,0 +1,39 @@
+@use "@angular/material" as mat;
+
+body {
+  height: 100vh !important;
+}
+mat-sidenav-container {
+  height: 100vh !important;
+  mat-sidenav {
+    // color: var(--mat-sys-background);
+    // background: var(--mat-sys-primary);
+    border-radius: 0;
+    max-width: 200px;
+    padding: 0 16px 0 16px;
+    a {
+      // color: var(--mat-sys-background);
+
+      margin-bottom: 8px;
+    }
+  }
+  mat-sidenav-content {
+    padding: 0 16px 0 16px;
+  }
+}
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+mat-sidenav {
+  @include mat.list-overrides(
+    (
+      // active-indicator-color: orange,
+      list-item-label-text-color: var(--mat-sys-background)
+    )
+  );
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: var(--mat-sys-primary),
+      container-text-color: var(--mat-sys-background),
+      content-text-color: var(--mat-sys-background),
+    )
+  );
+}

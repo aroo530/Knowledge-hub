@@ -1,0 +1,13 @@
+<div *ngIf="knowledge">
+  <h2 *ngIf="!isEditing">{{ knowledge.title }}</h2>
+  <input *ngIf="isEditing" [(ngModel)]="editedKnowledge.title" />
+
+  <p *ngIf="!isEditing">{{ knowledge.content }}</p>
+  <textarea *ngIf="isEditing" [(ngModel)]="editedKnowledge.content"></textarea>
+
+  <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
+  <button *ngIf="isEditing" (click)="saveEdit()">Save</button>
+  <button *ngIf="isEditing" (click)="toggleEdit()">Cancel</button>
+
+  <button (click)="deleteKnowledge()">Delete</button>
+</div>

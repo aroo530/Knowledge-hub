@@ -1,0 +1,45 @@
+<div class="chat-container">
+  <div class="chat-window">
+    <div class="chat-messages">
+      <div
+        class="item"
+        *ngFor="let message of messages"
+        [ngClass]="{
+          'user-message': message.sender === 'You',
+          'bot-message': message.sender === 'Bot'
+        }"
+      >
+        <div
+          class="message"
+          [ngClass]="{
+            'user-message': message.sender === 'You',
+            'bot-message': message.sender === 'Bot'
+          }"
+        >
+          <!-- <strong>{{ message.sender }}</strong> -->
+          <br />
+          <div class="markdown">
+            <markdown [data]="message.text"></markdown>
+          </div>
+          <span class="timestamp">{{
+            message.timestamp | date : "shortTime"
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <div class="input-field">
+      <input
+        matInput
+        placeholder="Type a message..."
+        [(ngModel)]="newMessage"
+        (keyup.enter)="sendMessage()"
+      />
+    </div>
+    <button color="primary" (click)="sendMessage()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>
