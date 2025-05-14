@@ -33,7 +33,7 @@ This project implements a **Retrieval-Augmented Generation (RAG) system** for cr
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/Knowledge-hub.git
+git clone https://github.com/aroo530/Knowledge-hub.git
 cd Knowledge-hub
 ```
 
