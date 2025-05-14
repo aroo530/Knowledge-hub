@@ -1,7 +1,3 @@
-Here's your updated **README** with a clear emphasis on the **self-hosted/local** nature of the project using a **local LLM** and **Postgres DB**:
-
----
-
 # RAG Knowledge Assistant
 
 ### **Overview**
